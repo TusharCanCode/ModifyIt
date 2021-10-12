@@ -72,7 +72,7 @@ export default function TextArea(props) {
             </div>
             <div className="container my-3" style={textToggle}>
                 <h2 >Analysis of your text</h2>
-                <p>The text has {text.split(' ').filter((ele) => { return ele.length !== 0 }).length} words and {text.length} characters.</p>
+                <p>The text has {text.split(/\s+/).filter((ele) => { return ele.length !== 0 }).length} words and {text.length} characters.</p>
                 <h2>Text Preview</h2>
                 <p>{text.length === 0 ? 'No text entered yet!!' : text}</p>
             </div>
