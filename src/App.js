@@ -35,8 +35,6 @@ function App() {
     })
     setTimeout(() => { setAlert(null) }, 1500)
   }
-  // Container class in bootstrap aligns the items in center
-  // React uses partial matching if we will not write exact then for /about React will render / as / Route is mentioned before /about and / is a partial match of /about
   return (
     <Router>
       <Navbar title="ModifyIt" navElement2="About Us" mode={mode} toggle={toggle} />

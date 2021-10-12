@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 
 export default function TextArea(props) {
-    // So here text is the state variable and will be assigned with the value entered in the useState and we can change the state of text only through updateText
     const [text, updateText] = useState("")
     const change = (event) => {
         updateText(event.target.value)
@@ -29,9 +28,7 @@ export default function TextArea(props) {
 
     const copy = () => {
         let text = document.getElementById('TextBox');
-        // The HTMLInputElement.select() method selects all the text in a <textarea> element or in an <input> element that includes a text field.
         text.select();
-        // Calling element.select() will not necessarily focus the input, so it is often used with
         text.focus();
         navigator.clipboard.writeText(text.value).then(function () {
             props.update('success', 'Copied to clipboard!');
@@ -65,7 +62,6 @@ export default function TextArea(props) {
             <div className="container">
                 <div className="mb-3 my-3">
                     <label htmlFor="TextBox"><h1 style={textToggle}>{props.heading}</h1></label>
-                    {/* If we don't use the onChnage property we can't write anything in the text area as in order to change the state of the value which contains {text} as the default value we have to use updateText */}
                     <textarea className="form-control" placeholder="Enter the text here..." value={text} onChange={change} id="TextBox" rows="10" style={placeholderToggle}></textarea>
                     <button disabled={text.length === 0} type="submit" onClick={convertToUpper} className="btn btn-primary my-2 mx-2">{props.task1}</button>
                     <button disabled={text.length === 0} type="submit" onClick={convertToLower} className="btn btn-danger my-2 mx-2">{props.task2}</button>
@@ -76,7 +72,6 @@ export default function TextArea(props) {
             </div>
             <div className="container my-3" style={textToggle}>
                 <h2 >Analysis of your text</h2>
-                {/* When we use split function and the text to be splitted is empty then still an empty element is present in the array returned by split function */}
                 <p>The text has {text.split(' ').filter((ele) => { return ele.length !== 0 }).length} words and {text.length} characters.</p>
                 <h2>Text Preview</h2>
                 <p>{text.length === 0 ? 'No text entered yet!!' : text}</p>

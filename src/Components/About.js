@@ -18,40 +18,6 @@ export default function About(props) {
         color: 'white'
     };
 
-    //Dark-Light Mode toggle using button:
-    // const [btnText, setBtnText] = useState('Enable Dark Mode');
-    // const [btnStyle, setBtnStyle] = useState({
-    //     backgroundColor: 'black',
-    //     color: 'white'
-    // })
-    // const [toggleStyle, setToggleStyle] = useState({
-    //     backgroundColor: 'white',
-    //     color: 'black'
-    // });
-    // const toggle = () => {
-    //     if (toggleStyle.color === 'black') {
-    //         setBtnStyle({
-    //             backgroundColor: 'white',
-    //             color: 'black',
-    //         })
-    //         setToggleStyle({
-    //             backgroundColor: 'black',
-    //             color: 'white',
-    //         })
-    //         setBtnText('Enable Light Mode')
-    //     }
-    //     else {
-    //         setBtnStyle({
-    //             backgroundColor: 'black',
-    //             color: 'white',
-    //         })
-    //         setToggleStyle({
-    //             backgroundColor: 'white',
-    //             color: 'black',
-    //         })
-    //         setBtnText('Enable Dark Mode')
-    //     }
-    // }
     return (
         <>
             <div className="about-section" style={toggleStyle}>
@@ -99,10 +65,6 @@ export default function About(props) {
                         </div>
                     </div>
                 </div>
-                {/* Dark-Light mode toggle using button */}
-                {/* <div className="dark-light-toggle">
-                    <button type="button" onClick={toggle} style={btnStyle} className="btn my-2 mx-2">{btnText}</button>
-                </div> */}
             </div>
         </>
     )
